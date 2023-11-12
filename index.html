@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/mainpage.css">
+    <title>Your Website</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-column">
+        <ul>
+          <li><a class="nav-link">Hello</a></li>
+          <li class="red-text">I am</li>
+          <li><a class="nav-link">Syed Ali</a></li>
+          <li>
+            <button onclick="redirectToAboutMe()" class="main-button">
+              More About Me ->
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="right-column">
+        <img src="img-1.JPG" alt="Your Image" />
+      </div>
+    </div>
+
+    <script>
+      function animateText() {
+        const textElements = document.querySelectorAll(".left-column li");
+
+        textElements.forEach((element, index) => {
+          setTimeout(() => {
+            element.classList.add("animate");
+          }, index * 500);
+        });
+      }
+
+      function redirectToAboutMe() {
+        // Replace 'https://your-about-me-url.com' with the actual URL you want to redirect to
+        window.location.href = "secondpage.html";
+      }
+
+      window.addEventListener("load", animateText);
+    </script>
+  </body>
+</html>
